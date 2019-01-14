@@ -438,9 +438,72 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        96Boards IVY5661
+      </label>
+    
     <a href="./" title="96Boards IVY5661" class="md-nav__link md-nav__link--active">
       96Boards IVY5661
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jumpers" title="Jumpers" class="md-nav__link">
+    Jumpers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-order-selection" title="Boot order selection" class="md-nav__link">
+    Boot order selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pins-on-extention-connector" title="PINs on extention connector" class="md-nav__link">
+    PINs on extention connector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jtag" title="JTAG" class="md-nav__link">
+    JTAG
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -671,6 +734,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jumpers" title="Jumpers" class="md-nav__link">
+    Jumpers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-order-selection" title="Boot order selection" class="md-nav__link">
+    Boot order selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pins-on-extention-connector" title="PINs on extention connector" class="md-nav__link">
+    PINs on extention connector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jtag" title="JTAG" class="md-nav__link">
+    JTAG
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -685,6 +798,463 @@
                 
                 
                 <h1 id="96boards-ivy5661">96Boards IVY5661<a class="headerlink" href="#96boards-ivy5661" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This page describes the details of 96Boards ivy5661, it was designed under 96Boards IoT Edition (IE) platform. We can create various BT and Wi-Fi applications with this board, such as <a href="/demos/wifi_repeater">Wi-Fi Repeater</a>, BLE Mesh, etc.</p>
+<p>Below picture indicate the majar compnents of ivy5661:
+<img alt="IVY5661" src="/extras/images/ivy5661_board.jpg" /></p>
+<h2 id="jumpers">Jumpers<a class="headerlink" href="#jumpers" title="Permanent link">&para;</a></h2>
+<p>There are 4 Jumpers on ivy5661, each of them is constructed by 3 pins, they are used for select functions in two or more candidates.</p>
+<table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JMP0</td>
+<td>Boot Siwtch 0</td>
+</tr>
+<tr>
+<td>JMP1</td>
+<td>Boot Switch 1</td>
+</tr>
+<tr>
+<td>JUM2</td>
+<td>UART/I2C Switch 0</td>
+</tr>
+<tr>
+<td>JUM3</td>
+<td>UART/I2C Siwtch 0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="boot-order-selection">Boot order selection<a class="headerlink" href="#boot-order-selection" title="Permanent link">&para;</a></h3>
+<p>We need to combine JMP0 and JMP1 to switch the boot mode, the combinations are listed below.</p>
+<table>
+<thead>
+<tr>
+<th>JMP0</th>
+<th>JMP1</th>
+<th>Boot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>Boot from Flash (normal mode)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>Boot from ROM CODE (flash mode)</td>
+</tr>
+</tbody>
+</table>
+<p>note: 0 means connect pin1 and pin2, 1 means connect pin2 and pin3 withc jumper.</p>
+<h2 id="pins-on-extention-connector">PINs on extention connector<a class="headerlink" href="#pins-on-extention-connector" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>NUMBER</th>
+<th>NAME</th>
+<th>FUNCTION DECLARATION</th>
+<th>DIRECTION</th>
+<th>PORT</th>
+<th>PIN</th>
+<th>DEFAULT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GND</td>
+<td>connect to GND</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2</td>
+<td>GND</td>
+<td>connect to GND</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>U1CTS</td>
+<td>0: U1CTS<br>3: GPIO24<br>5: PCIe_DBG11</td>
+<td>I<br>I/O/T<br/>O</td>
+<td>1</td>
+<td>8</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PWR_BTN_N</td>
+<td>external access; <br>control power supply of board.</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>5</td>
+<td>U1TXD</td>
+<td>0: U1TXD<br>3: GPIO21<br>5: PCIe_DBG8</td>
+<td>O<br>I/O/T<br>O</td>
+<td>1</td>
+<td>5</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>RST_N</td>
+<td>reset board</td>
+<td>I</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>7</td>
+<td>U1RXD</td>
+<td>0: U1RXD<br>3: GPIO22<br>5: PCIe_DBG9</td>
+<td>I<br>I/O/T<br>O</td>
+<td>1</td>
+<td>6</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>SD_CLK</td>
+<td>0: SD_CLK<br>3: GPIO19<br>5: PCIe_DBG4</td>
+<td>I/O/T<br>I/O/T<br>O</td>
+<td>1</td>
+<td>3</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>9</td>
+<td>U1RTS</td>
+<td>0: U1RTS<br>3: GPIO23<br>5: PCIe_DBG10</td>
+<td>O<br>I/O/T<br>O</td>
+<td>1</td>
+<td>7</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>SD_D0</td>
+<td>0: SD_D0<br>3: GPIO18<br>5: PCIe_DBG3</td>
+<td>I/O/T<br>I/O/T<br>O</td>
+<td>1</td>
+<td>2</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>11</td>
+<td>U2TXD</td>
+<td>0: PCIE_WAKE_L<br>1: U2TXD(G1)<br>3: GPIO42</td>
+<td>I/O/T<br>O<br>I/O/T</td>
+<td>2</td>
+<td>10</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>12</td>
+<td>SD_CMD</td>
+<td>0: SD_CMD<br>3: GPIO20<br>4: DB7(G1)<br>5: PCIe_DBG5</td>
+<td>I/O/T<br>I/O/T<br>O<br>O</td>
+<td>1</td>
+<td>4</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>13</td>
+<td>U2RXD</td>
+<td>0: PCIE_RST_L<br>1: U2RXD(G1)<br>3: GPIO41</td>
+<td>I<br>I<br>I/O/T</td>
+<td>2</td>
+<td>9</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>14</td>
+<td>SD_D1</td>
+<td>0: SD_D1<br>3: GPIO17<br>5: PCIe_DBG2</td>
+<td>I/O/T<br>I/O/T<br>O</td>
+<td>1</td>
+<td>1</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>15</td>
+<td>I2CSCL</td>
+<td>0: U3RXD<br>1: I2C_SCL<br>3: GPIO31<br>5: PCIe_DBG7</td>
+<td>I<br>I/O/T<br>I/O/T<br>O</td>
+<td>1</td>
+<td>15</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>16</td>
+<td>IISRCK</td>
+<td>0: IISLRCK<br>1: IIS1LRCK<br>2: COEX5<br>3: GPIO6<br>4: DB2(G0)<br>5: WB11</td>
+<td>I/O/T<br>I/O/T<br>I/O<br>I/O/T<br>O<br>O</td>
+<td>0</td>
+<td>6</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>17</td>
+<td>I2CSDA</td>
+<td>0: U3TXD<br>1: I2C_SDA<br>3: GPIO30<br>5: PCIe_DBG6</td>
+<td>O<br>I/O/T<br>I/O/T<br>O</td>
+<td>1</td>
+<td>14</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>18</td>
+<td>IISCLK</td>
+<td>0: IISCLK<br>1: IIS1CK<br>2: COEX4<br>3: GPIO5<br>4: DB1(G0)<br>5: WB10</td>
+<td>I/O/T<br>I/O/T<br>I/O<br>I/O/T<br>O<br>O</td>
+<td>0</td>
+<td>5</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>20</td>
+<td>IISDO</td>
+<td>0: IISDO<br>1: IIS1DO<br>2: COEX3<br>3: GPIO4<br>4: DB0(G0)<br>5: WB9</td>
+<td>O/T<br>O/T<br>I/O<br>I/O/T<br>O<br>O</td>
+<td>0</td>
+<td>4</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>22</td>
+<td>IISDI</td>
+<td>0: IISDI<br>2: COEX6<br>3: GPIO7<br>4: DB3(G0)<br>5: WB12</td>
+<td>I<br>I/O<br>I/O/T<br>O<br>O</td>
+<td>0</td>
+<td>7</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>23</td>
+<td>INT</td>
+<td>0: INT<br>2: COEX7<br>3: GPIO10</td>
+<td>O<br>I/O<br>I/O/T</td>
+<td>0</td>
+<td>10</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>24</td>
+<td>GPIO25</td>
+<td>0: GNSS_LNA_EN<br>2: FDMA_CEN<br>3: GPIO25</td>
+<td>O<br>I<br>I/O/T</td>
+<td>1</td>
+<td>9</td>
+<td>FUNC3</td>
+</tr>
+<tr>
+<td>25</td>
+<td>WCI_2_TXD</td>
+<td>0: WCI_2_TXD<br>2: COEX1<br>3: GPIO9<br>4: DB7(G0)<br>5: WB4</td>
+<td>O<br>I/O<br>I/O/T<br>O<br>O</td>
+<td>0</td>
+<td>9</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>26</td>
+<td>WCI_2_RXD</td>
+<td>0: WCI_2_RXD<br>2: COEX0<br>3: GPIO8<br>4: DB2(G1)<br>5: WB3</td>
+<td>I<br>I/O<br>I/O/T<br>O<br>O</td>
+<td>0</td>
+<td>8</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>27</td>
+<td>RFCTL0</td>
+<td>0: RFCTL0<br>2: SOC_DBG0<br>3: GPIO32<br>5: WB13</td>
+<td>O<br>O<br>I/O/T<br>O</td>
+<td>2</td>
+<td>0</td>
+<td>FUNC3</td>
+</tr>
+<tr>
+<td>28</td>
+<td>GPIO43</td>
+<td>0: U0TXD<br>3: GPIO43<br>5: PCIe_DBG12</td>
+<td>O<br>I/O/T<br>O</td>
+<td>2</td>
+<td>11</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>29</td>
+<td>RFCTL1</td>
+<td>0: RFCTL1<br>2: SOC_DBG1<br>3: GPIO33<br>5: WB14</td>
+<td>O<br>O<br>I/O/T<br>O</td>
+<td>1</td>
+<td>1</td>
+<td>FUNC3</td>
+</tr>
+<tr>
+<td>30</td>
+<td>RFCTL3</td>
+<td>0: RFCTL3<br>2: SOC_DBG3<br>3: GPIO35<br>5: WB16</td>
+<td>O<br>O<br>I/O/T<br>O</td>
+<td>1</td>
+<td>3</td>
+<td>FUNC3</td>
+</tr>
+<tr>
+<td>31</td>
+<td>RFCTL2</td>
+<td>0: RFCTL2<br>2: SOC_DBG2<br>3: GPIO34<br>5: WB15</td>
+<td>O<br>O<br>I/O/T<br>O</td>
+<td>1</td>
+<td>2</td>
+<td>FUNC3</td>
+</tr>
+<tr>
+<td>32</td>
+<td>RFCTL4</td>
+<td>0: RFCTL4<br>2: SOC_DBG4<br>3: GPIO36<br>5: WB17</td>
+<td>O<br>O<br>I/O/T<br>O</td>
+<td>1</td>
+<td>4</td>
+<td>FUNC3</td>
+</tr>
+<tr>
+<td>33</td>
+<td>MTMS</td>
+<td>0: MTMS<br>1: PPS(G0)<br>2: FDMA_MISO<br>3: GPIO11<br>4: DB0(G1)<br>5: WB5</td>
+<td>I/O<br>O<br>O<br>I/O/T<br>O<br>O</td>
+<td>0</td>
+<td>11</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>34</td>
+<td>MTCK</td>
+<td>0: MTCK<br>1: T_DIG(G0)<br>2: FDMA_MOSI<br>3: GPIO12<br>4: DB1(G1)<br>5: WB6</td>
+<td>I<br>I<br>I<br>I/O/T<br>O<br>O</td>
+<td>0</td>
+<td>12</td>
+<td>FUNC0</td>
+</tr>
+<tr>
+<td>35</td>
+<td>VDD1V8</td>
+<td>connect to 1.8V VDD</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>37</td>
+<td>USB_VBUS</td>
+<td>connect to USB to provide power</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>39</td>
+<td>GND</td>
+<td>connect to GND</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>40</td>
+<td>GND</td>
+<td>connect to GND</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="jtag">JTAG<a class="headerlink" href="#jtag" title="Permanent link">&para;</a></h2>
+<p>If you need to debug your program in gdb mode, it requires external JTAG to connect with the external connector on ivy5661. J-Link is the recommended JTAG tool, it has been tested by many devolopers, the usage guide can be found <a href="/sdk/debug/">here</a>.</p>
+<p>The minimal requirements for use JTAG interface is 4 wires connected listed below.</p>
+<table>
+<thead>
+<tr>
+<th>20-pin JTAG/SWD</th>
+<th>40-pin extention connector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1  - VCC</td>
+<td>35 - VCC</td>
+</tr>
+<tr>
+<td>3  - TRST</td>
+<td></td>
+</tr>
+<tr>
+<td>5  - TDI</td>
+<td></td>
+</tr>
+<tr>
+<td>7  - TMS/SWDIO</td>
+<td>33 - TMS</td>
+</tr>
+<tr>
+<td>9  - TCK/SWCLK</td>
+<td>34 - TCK</td>
+</tr>
+<tr>
+<td>11 - RTCK</td>
+<td></td>
+</tr>
+<tr>
+<td>13 - TDO/SWO</td>
+<td></td>
+</tr>
+<tr>
+<td>15 - RESET</td>
+<td></td>
+</tr>
+<tr>
+<td>17 - NC</td>
+<td></td>
+</tr>
+<tr>
+<td>19 - NC</td>
+<td></td>
+</tr>
+<tr>
+<td>2  - NC</td>
+<td></td>
+</tr>
+<tr>
+<td>20 - GND</td>
+<td>39 - GND</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 

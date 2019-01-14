@@ -794,58 +794,63 @@ cd apps/zperf
 </code></pre>
 
 <h3 id="build"><strong>BUILD</strong><a class="headerlink" href="#build" title="Permanent link">&para;</a></h3>
-<p>1)Please setup environment as the below URL.
-- <a href="../../sdk/build/">Build UNISOC SDK</a></p>
-<p>2)Specifi the PROFILE to zperf</p>
+<p>1) Please setup environment as the below URL.</p>
+<ul>
+<li><a href="../../sdk/build/">Build UNISOC SDK</a></li>
+</ul>
+<p>2) Set PROFILE to zperf and make</p>
 <pre><code class="shell">PROFILE=zperf make
 </code></pre>
 
-<p>3)See the build result and check if binaries generated.</p>
+<p>3) See the build result and check if binaries generated.</p>
 <pre><code class="shell">cd output/zperf/images
 </code></pre>
 
 <h3 id="update-firmware"><strong>UPDATE FIRMWARE</strong><a class="headerlink" href="#update-firmware" title="Permanent link">&para;</a></h3>
-<p>Please update firmware as the below URL.
-- <a href="../../sdk/update_firmware/">Update firmware</a></p>
+<p>Please update firmware as the below URL.</p>
+<ul>
+<li><a href="../../sdk/update_firmware/">Update firmware</a></li>
+</ul>
 <h3 id="usage"><strong>USAGE</strong><a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<p>For details, please refer to the following URL.</p>
 <ul>
 <li><a href="http://docs.zephyrproject.org/latest/samples/net/zperf/README.html">Zephyr zperf guide</a></li>
 </ul>
 <p>Here are examples.</p>
-<p>UDP RX:
-1) Run on board</p>
-<pre><code class="shell">uart:~$ zperf udp download 5001
+<p>UDP RX:</p>
+<p>1) Run on board</p>
+<pre><code class="shell">zperf udp download 5001
 </code></pre>
 
 <p>2) Run on PC</p>
 <pre><code class="shell">iperf -l 1K -c 192.168.20.127 -p 5001 -i 1 -u
 </code></pre>
 
-<p>UDP TX:
-1) Run on PC</p>
+<p>UDP TX:</p>
+<p>1) Run on PC</p>
 <pre><code class="shell">iperf -s -l 1K -u -B 192.168.1.142
 </code></pre>
 
 <p>2) Run on board</p>
-<pre><code class="shell">uart:~$ zperf udp upload 192.168.1.142 5001 10 1K 100M
+<pre><code class="shell">zperf udp upload 192.168.1.142 5001 10 1K 100M
 </code></pre>
 
-<p>TCP RX:
-1) Run on board</p>
-<pre><code class="shell">uart:~$ zperf tcp download 5001
+<p>TCP RX:</p>
+<p>1) Run on board</p>
+<pre><code class="shell">zperf tcp download 5001
 </code></pre>
 
 <p>2) Run on PC</p>
 <pre><code class="shell">iperf -l 1K -c 192.168.20.127 -p 5001 -i 1
 </code></pre>
 
-<p>TCP TX:
-1) Run on PC</p>
+<p>TCP TX:</p>
+<p>1) Run on PC</p>
 <pre><code class="shell">iperf -s -l 1K -B 192.168.1.142
 </code></pre>
 
 <p>2) Run on board</p>
-<pre><code class="shell">uart:~$ zperf tcp upload 192.168.1.142 5001 10 1K 100M
+<pre><code class="shell">zperf tcp upload 192.168.1.142 5001 10 1K 100M
 </code></pre>
                 
                   
